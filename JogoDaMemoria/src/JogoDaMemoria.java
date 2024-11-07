@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class JogoDaMemoria {
     static int Linha1, Coluna1;
     static int Linha2, Coluna2;
-    static int RF1 , RF2;
+   // static int RF1 , RF2;
     static String[][] tabuleiro = {
             {"A", "B", "C", "D"},
             {"E", "F", "G", "H"},
@@ -86,7 +86,7 @@ public class JogoDaMemoria {
         ImprimirTabu();
         System.out.println("Embaralhando....");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(2000);
         } catch (Exception _) {
         }
         System.out.println("==============");
