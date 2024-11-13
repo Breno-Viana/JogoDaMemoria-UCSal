@@ -1,6 +1,7 @@
-import java.nio.channels.Pipe;
+/**/
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class JogoDaMemoria {
    static int iI2=0, iJ2 =0;
@@ -26,7 +27,8 @@ public class JogoDaMemoria {
     static void ImprimirTabuleiro() {
         for (int i = 0; i < tabuleiro.length; i++) {
             for (int j = 0; j < tabuleiro[i].length; j++) {
-                System.out.print(tabuleiro[i][j] + "  ");
+                System.out.print("X  ");
+                //System.out.print(tabuleiro[i][j] + "  ");
             }
             System.out.println();
         }
@@ -35,8 +37,7 @@ public class JogoDaMemoria {
     static void ImprimirTabu() {
         for (int i = 0; i < tabuleiro.length; i++) {
             for (int j = 0; j < tabuleiro[i].length; j++) {
-                System.out.print("X  ");
-                //System.out.print(tabuleiro[i][j] + "  ");
+                System.out.print(tabuleiro[i][j] + "  ");
             }
             System.out.println();
         }
@@ -163,7 +164,6 @@ public class JogoDaMemoria {
         } while (pares != 8);
         System.out.println("VOCE GANHOU O JOGO!");
     }
-    //problema de posição repitida
 
     public static void main(String[] args) {
         Inicio();
