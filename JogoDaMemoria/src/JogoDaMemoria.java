@@ -1,14 +1,12 @@
 /**/
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 
 public class JogoDaMemoria {
-   static int iI2=0, iJ2 =0;
+    static int iI2=0, iJ2 =0;
     static int iI=0,iJ=0;
-
     static int pos1,pos2;
-    // static int RF1 , RF2;
+   
     static String[][] tabuleiro = {
             {"A", "B", "C", "D"},
             {"E", "F", "G", "H"},
@@ -23,12 +21,12 @@ public class JogoDaMemoria {
     };
     static int pares = 0;
     static boolean[][] VerificarPos = new boolean[4][4];
+    static boolean Desistiu = false; 
 
     static void ImprimirTabuleiro() {
         for (int i = 0; i < tabuleiro.length; i++) {
             for (int j = 0; j < tabuleiro[i].length; j++) {
                 System.out.print("X  ");
-                //System.out.print(tabuleiro[i][j] + "  ");
             }
             System.out.println();
         }
@@ -103,7 +101,6 @@ public class JogoDaMemoria {
             VerificarPos[iI][iJ] = false;
             VerificarPos[iI2][iJ2] = false;
             System.out.println("Nao é um par");
-            // AbrirPos();
         }
 
 
@@ -121,6 +118,17 @@ public class JogoDaMemoria {
         }
         return VerificarPos[N][n];
     }
+    
+    static void Desistir(){
+        for(int i = 0; i < tabuleiro.length; i++){
+            for(int j = 0; j < tabuleiro[i].length;j++){
+                System.out.print(tabuleiro[i][j]+"  ");
+            }
+            System.out.println();
+        }
+        Desistiu = true;
+        
+    }
 
 
     static void Inicio() {
@@ -136,8 +144,12 @@ public class JogoDaMemoria {
         ImprimirTabuleiro();
         do {
             while (true){
-                System.out.println("Digite um numero de 1 a 16");
+                System.out.println("Digite um numero de 1 a 16 ou [-1] para desistir");
                 pos1 = sc.nextInt();
+                if(pos1 == -1){
+                    Desistir();
+                    return;
+                }
                 if (pos1 > 16 || pos1 < 1){
                     System.out.println("posição invalida");
                 }else{
@@ -167,5 +179,8 @@ public class JogoDaMemoria {
 
     public static void main(String[] args) {
         Inicio();
-    }
+        if(Desistiu){
+        System.out.println("Voce desistiu, pares encontrados -> "+ pares);
+        }
+}
 }
