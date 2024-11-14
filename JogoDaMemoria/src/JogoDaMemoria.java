@@ -117,6 +117,15 @@ public class JogoDaMemoria {
         }
         return VerificarPos[N][n];
     }
+    static void Desistir(){
+        for(int i = 0; i < tabuleiro.length; i++){
+            for(int j = 0; j < tabuleiro[i].length{
+                System.out.print(tabuleiro[i][j]+"  ")
+            }
+            System.out.println();
+        }
+        break;
+    }
 
 
     static void Inicio() {
@@ -132,8 +141,12 @@ public class JogoDaMemoria {
         ImprimirTabuleiro();
         do {
             while (true){
-                System.out.println("Digite um numero de 1 a 16");
+                System.out.println("Digite um numero de 1 a 16 ou [-1] para desistir");
                 pos1 = sc.nextInt();
+                if(pos1 == -1){
+                    Desistir()
+                    break;
+                }
                 if (pos1 > 16 || pos1 < 1){
                     System.out.println("posição invalida");
                 }else{
