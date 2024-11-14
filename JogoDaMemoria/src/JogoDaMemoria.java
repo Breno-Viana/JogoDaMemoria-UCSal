@@ -21,6 +21,7 @@ public class JogoDaMemoria {
     };
     static int pares = 0;
     static boolean[][] VerificarPos = new boolean[4][4];
+    static boolean Desistiu = false; 
 
     static void ImprimirTabuleiro() {
         for (int i = 0; i < tabuleiro.length; i++) {
@@ -117,6 +118,7 @@ public class JogoDaMemoria {
         }
         return VerificarPos[N][n];
     }
+    
     static void Desistir(){
         for(int i = 0; i < tabuleiro.length; i++){
             for(int j = 0; j < tabuleiro[i].length;j++){
@@ -124,6 +126,7 @@ public class JogoDaMemoria {
             }
             System.out.println();
         }
+        Desistiu = true;
         
     }
 
@@ -176,6 +179,7 @@ public class JogoDaMemoria {
 
     public static void main(String[] args) {
         Inicio();
+        if(Desistiu){
         System.out.println("Voce desistiu, pares encontrados -> "+ pares);
-    }
+        }
 }
