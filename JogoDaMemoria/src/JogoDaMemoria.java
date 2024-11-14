@@ -1,14 +1,12 @@
 /**/
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 
 public class JogoDaMemoria {
-   static int iI2=0, iJ2 =0;
+    static int iI2=0, iJ2 =0;
     static int iI=0,iJ=0;
-
     static int pos1,pos2;
-    // static int RF1 , RF2;
+   
     static String[][] tabuleiro = {
             {"A", "B", "C", "D"},
             {"E", "F", "G", "H"},
@@ -28,7 +26,6 @@ public class JogoDaMemoria {
         for (int i = 0; i < tabuleiro.length; i++) {
             for (int j = 0; j < tabuleiro[i].length; j++) {
                 System.out.print("X  ");
-                //System.out.print(tabuleiro[i][j] + "  ");
             }
             System.out.println();
         }
@@ -103,7 +100,6 @@ public class JogoDaMemoria {
             VerificarPos[iI][iJ] = false;
             VerificarPos[iI2][iJ2] = false;
             System.out.println("Nao é um par");
-            // AbrirPos();
         }
 
 
