@@ -7,13 +7,13 @@ public class JogoDaMemoria {
     static int iI=0,iJ=0;
     static int pos1,pos2;
    
-    static String[][] tabuleiro = {
+    static final String[][] tabuleiro = {
             {"A", "B", "C", "D"},
             {"E", "F", "G", "H"},
             {"A", "B", "C", "D"},
             {"E", "F", "G", "H"}
     };
-    static int[][] Posi = {
+    static final int[][] Posi = {
             {1,2,3,4},
             {5,6,7,8},
             {9,10,11,12},
@@ -24,9 +24,9 @@ public class JogoDaMemoria {
     static boolean Desistiu = false; 
 
     static void ImprimirTabuleiro() {
-        for (int i = 0; i < tabuleiro.length; i++) {
-            for (int j = 0; j < tabuleiro[i].length; j++) {
-               System.out.print("X  ");
+        for (String[] strings : tabuleiro) {
+            for (int j = 0; j < strings.length; j++) {
+                System.out.print("X  ");
             }
             System.out.println();
         }
