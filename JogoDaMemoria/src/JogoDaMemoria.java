@@ -3,7 +3,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class JogoDaMemoria {
-    static int iI2=0, iJ2 =0;
     static int iI=0,iJ=0;
     static int pos1,pos2;
    
@@ -82,7 +81,7 @@ public class JogoDaMemoria {
     }
 
     static void ChecarPos(int pos) {
-
+         int iI2=0, iJ2 =0;
         for (int i = 0; i <Posi.length ; i++) {
             for (int j = 0; j <Posi[i].length ; j++) {
                 if (Posi[i][j] == pos){
@@ -94,12 +93,10 @@ public class JogoDaMemoria {
         }
 
         if (tabuleiro[iI][iJ].equals(tabuleiro[iI2][iJ2])) {
-            VerificarPos[iI2][iJ2] = true;
             AbrirPos(pos);
             pares++;
         } else {
             VerificarPos[iI][iJ] = false;
-            VerificarPos[iI2][iJ2] = false;
             System.out.println("Nao é um par");
         }
 
