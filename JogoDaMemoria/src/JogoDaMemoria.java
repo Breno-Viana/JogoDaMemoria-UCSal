@@ -136,9 +136,9 @@ public class JogoDaMemoria {
         System.out.println("=====================");
         ImprimirTabu();
         System.out.println("Embaralhando....");
+        Embaralhar();
         System.out.println("==============");
         System.out.println(" EMBARALHADO!");
-        Embaralhar();
         ImprimirTabuleiro();
         do {
             while (true){
